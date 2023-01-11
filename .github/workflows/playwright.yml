@@ -1,26 +1,26 @@
-name: Playwright Tests
+name: Post to LinkedIn
 on:
   workflow_dispatch:
     inputs:
       email:
         description: "Email to login"
-        type: environment
+        type: string
         required: true
       pass:
         description: "Pass to login"
-        type: environment
+        type: string
         required: true
       url:
         description: "URL of carousel to upload"
-        type: environment
+        type: string
         required: true
       altOfFile:
         description: "Alternative text of carousel"
-        type: environment
+        type: string
         required: true
       postText:
         description: "Text of the post"
-        type: environment
+        type: string
         required: true
 jobs:
   test:
