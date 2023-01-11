@@ -36,7 +36,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install chromium --with-deps
       - name: Run Playwright tests
-        run: npx cross-env email=\"${{ inputs.email }}\" pass=\"${{ inputs.pass }}\" url=\"${{ inputs.url }}\" altOfFile=\"${{ inputs.altOfFile }}\" postText=\"${{ inputs.postText }}\" npm start
+        run: npx cross-env email="${{ inputs.email }}" pass="${{ inputs.pass }}" url="${{ inputs.url }}" altOfFile="${{ inputs.altOfFile }}" postText="${{ inputs.postText }}" npm start
       - uses: actions/upload-artifact@v3
         if: always()
         with:
