@@ -2,14 +2,6 @@ import { test } from "@playwright/test";
 import { down, texts } from "../i18n/texts";
 
 test("test", async ({ page }) => {
-  /*
-  const url =
-    "https://zkusdlcgbjckpzwtwixa.supabase.co/storage/v1/object/sign/carousel/png2pdf.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjYXJvdXNlbC9wbmcycGRmLnBkZiIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MzQ3MTI3OCwiZXhwIjoxOTg4ODMxMjc4fQ.6OG_pLIZYwUlzPGnbS0qa3Fu2iyimOipT5fZWp9v57A";
-  const docAlt = "[ALT_TEXT]";
-  const postText = "My fokin awesome post!";
-  const email = "syreanis@gmail.com";
-  const pass = "#LinkedIn/Je/Super/2020&";
-  */
   const email = process.env.email;
   const pass = process.env.pass;
   const url = process.env.url;
