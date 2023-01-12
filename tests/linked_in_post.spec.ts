@@ -7,7 +7,7 @@ test("test", async ({ page }) => {
   const url = process.env.url;
   const altOfFile = process.env.altOfFile;
   const postText = process.env.postText;
-  const lang = (process.env.lang as keyof typeof texts) || "en";
+  const lang = process.env.lang as keyof typeof texts;
 
   await page.goto("https://www.linkedin.com/login");
 
