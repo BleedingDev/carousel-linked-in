@@ -7,6 +7,7 @@ test("test", async ({ page }) => {
   const url = process.env.url;
   const altOfFile = process.env.altOfFile;
   const postText = process.env.postText;
+  const lang = (process.env.lang as keyof typeof texts) || "en";
 
   await page.goto("https://www.linkedin.com/login");
 
@@ -15,9 +16,9 @@ test("test", async ({ page }) => {
   await page.locator(":focus").fill(pass);
   await page.locator(":focus").press("Enter");
 
-  await page.getByRole("button", { name: texts.en.start }).click();
+  await page.getByRole("button", { name: texts[lang].start }).click();
 
-  await page.getByRole("button", { name: texts.en.addDoc }).click();
+  await page.getByRole("button", { name: texts[lang].addDoc }).click();
 
   // Create download element
   const el = await page.$(".document-cloud-upload");
@@ -40,11 +41,11 @@ test("test", async ({ page }) => {
   // Save in temporary files, so that it is deleted after automation ends
   await download.saveAs(pdfPath);
 
-  await page.getByLabel(texts.en.choose).setInputFiles(pdfPath);
-  await page.getByPlaceholder(texts.en.description).fill(altOfFile);
-  await page.getByRole("button", { name: texts.en.done }).click();
+  await page.getByLabel(texts[lang].choose).setInputFiles(pdfPath);
+  await page.getByPlaceholder(texts[lang].description).fill(altOfFile);
+  await page.getByRole("button", { name: texts[lang].done }).click();
 
-  await page.getByRole("textbox", { name: texts.en.content }).fill(postText);
+  await page.getByRole("textbox", { name: texts[lang].content }).fill(postText);
   await page.waitForSelector(".share-creation-state iframe");
-  await page.getByRole("button", { name: texts.en.post }).click();
+  await page.getByRole("button", { name: texts[lang].post }).click();
 });

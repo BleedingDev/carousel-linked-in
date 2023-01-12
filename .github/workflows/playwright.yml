@@ -22,6 +22,14 @@ on:
         description: "Text of the post"
         type: string
         required: true
+      logLevel:
+        description: "Language of your LinkedIn"
+        required: true
+        default: "en"
+        type: choice
+        options:
+          - en
+          - cz
 jobs:
   test:
     timeout-minutes: 60
