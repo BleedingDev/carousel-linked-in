@@ -45,7 +45,7 @@ test("test", async ({ page }) => {
   await page.getByPlaceholder(texts[lang].description).fill(altOfFile);
   await page.getByRole("button", { name: texts[lang].done }).click();
 
-  await page.getByRole("textbox", { name: texts[lang].content }).fill(postText);
+  await page.getByRole("textbox").fill(postText);
   await page.waitForSelector(".share-creation-state iframe");
   await page.getByRole("button", { name: texts[lang].post }).click();
 });

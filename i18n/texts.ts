@@ -5,7 +5,6 @@ export const texts = {
     choose: "Choose file",
     description: "Add a descriptive title to your document",
     done: "Done",
-    content: "Text editor for creating content",
     post: "Pst",
   },
   cz: {
@@ -14,7 +13,6 @@ export const texts = {
     choose: "Vybrat soubor",
     description: "Přidejte popisný název svého dokumentu",
     done: "Hotovo",
-    content: "O čem chcete napsat?",
     post: "Zeveřejnit",
   },
 } as const;
